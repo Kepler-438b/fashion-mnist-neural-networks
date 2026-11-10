@@ -47,27 +47,28 @@ The notebook uses a GPU automatically when one is available (NVIDIA CUDA or Appl
 
 ```
 ├── fashion_mnist_neural_networks.ipynb   # full analysis, with outputs
+├── download_data.py                      # downloads the data files from the release
 ├── data/
-│   └── README.md                         # expected data files and source
+│   └── README.md                         # data format and source
 ├── images/                               # figures used in this README
 └── requirements.txt
 ```
 
 ## How to run
 
-1. Put `train.csv` and `evaluate.csv` in the `data/` folder (see [data/README.md](data/README.md)).
-2. Install the dependencies and open the notebook:
-
 ```bash
 pip install -r requirements.txt
+python download_data.py        # downloads train.csv and evaluate.csv (~180 MB) into data/
 jupyter notebook fashion_mnist_neural_networks.ipynb
 ```
+
+The data files are attached to the [v1.0.0 release](https://github.com/Kepler-438b/fashion-mnist-neural-networks/releases/tag/v1.0.0). You can also download them from there by hand and put them in `data/`.
 
 On a laptop CPU the full run takes about 30 minutes, mostly for the two CNNs. With a GPU it takes a few minutes. Trained weights are saved to `models/`, and predictions for the unlabelled images to `results.csv`.
 
 ## Data
 
-The images are a 32×32 version of [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) by Zalando Research, released under the MIT License. The data files are not included in this repository because of their size.
+The images are a 32×32 version of [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) by Zalando Research, released under the MIT License. The data files are too large for the repository itself, so they are published as release assets (see How to run).
 
 ## About
 
